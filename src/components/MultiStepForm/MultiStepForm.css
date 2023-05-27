@@ -1,0 +1,51 @@
+.stepform {
+  height: 100vh;
+  background: transparent;
+  flex-direction: column;
+}
+
+.stepform__steps {
+  padding: 30px 23px;
+  margin: 0 16px;
+
+  background: white;
+  border-radius: 13px;
+  transform: translateY(calc(-100vh + 550px));
+}
+
+.stepform__main {
+  flex-direction: column;
+}
+
+.stepform legend {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+@media (min-width: 935px) {
+  .stepform {
+    height: 600px;
+    width: 935px;
+    padding: 16px 0 16px 16px;
+    flex-direction: row;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.07);
+  }
+
+  .stepform__steps {
+    padding: 0;
+    margin: 0;
+    transform: none;
+  }
+
+  .stepform__main {
+    flex: 1;
+    justify-content: space-between;
+    padding: calc(55px - 16px) 100px 0;
+  }
+
+  .stepform legend {
+    font-size: 33px;
+  }
+}

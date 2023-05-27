@@ -1,0 +1,20 @@
+.flex {
+  display: flex;
+}
+
+.bx-center {
+  justify-content: center;
+}
+
+.bx-between {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

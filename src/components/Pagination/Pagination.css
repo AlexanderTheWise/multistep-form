@@ -1,0 +1,25 @@
+.pagination {
+  background: white;
+  padding: 16px;
+}
+
+.pagination__prev {
+  color: var(--cool-gray);
+}
+
+.pagination__prev--hidden {
+  visibility: hidden;
+}
+
+.pagination__next {
+  background: var(--marine-blue);
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+@media (min-width: 965px) {
+  .pagination {
+    padding: 0 0 16px;
+  }
+}

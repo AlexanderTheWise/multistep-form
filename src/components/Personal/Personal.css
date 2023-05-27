@@ -1,0 +1,50 @@
+.personal__entry {
+  display: block;
+  margin-top: 15px;
+  color: var(--marine-blue);
+}
+
+.personal__entry input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+
+  border: solid 1px var(--light-gray);
+  border-radius: 7px;
+  padding: 10px;
+  margin-top: 5px;
+
+  cursor: pointer;
+  color: var(--marine-blue);
+}
+
+.personal__entry input:focus {
+  border: 2px solid var(--marine-blue);
+}
+
+.personal__entry input:invalid,
+.personal__entry--error input {
+  border-color: var(--strawberry-red);
+}
+
+.personal__entry:first-of-type {
+  margin-top: 20px;
+}
+
+.personal__error {
+  color: var(--strawberry-red);
+}
+
+@media (min-width: 935px) {
+  .personal__entry:first-of-type {
+    margin-top: 40px;
+  }
+
+  .personal__entry {
+    margin-top: 25px;
+  }
+
+  .personal__entry input {
+    padding: 15px;
+  }
+}
