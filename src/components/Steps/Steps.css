@@ -3,7 +3,7 @@
     center no-repeat;
   background-size: 100% auto;
   padding: 25px;
-  flex: 1;
+  height: 170px;
   justify-content: center;
   font-weight: 700;
 }
@@ -51,6 +51,7 @@
       no-repeat;
     padding: 0;
     flex: 275px 0 0;
+    height: 565px;
     justify-content: flex-start;
     padding: 35px 30px;
   }
