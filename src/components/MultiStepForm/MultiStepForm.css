@@ -2,15 +2,19 @@
   height: 100vh;
   background: transparent;
   flex-direction: column;
+  position: relative;
 }
 
 .stepform__steps {
   padding: 30px 23px;
   margin: 0 16px;
-
   background: white;
   border-radius: 13px;
-  transform: translateY(calc(-100vh + 550px));
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-top: 100px;
 }
 
 .stepform__main {
@@ -34,6 +38,7 @@
   }
 
   .stepform__steps {
+    position: static;
     padding: 0;
     margin: 0;
     transform: none;

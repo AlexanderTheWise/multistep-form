@@ -12,12 +12,16 @@ export default function useForm() {
       invalidError: false,
     },
     planError: false,
+    isYearly: false,
   });
 
   const setProp = (event) => {
+    const targetName = event.target.name;
+    const targetValue =
+      targetName === "isYearly" ? event.target.checked : event.target.value;
     setForm((prevForm) => ({
       ...prevForm,
-      [event.target.name]: event.target.value,
+      [targetName]: targetValue,
     }));
   };
 
