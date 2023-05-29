@@ -13,7 +13,7 @@ export default function useForm() {
       invalidError: false,
     },
     planError: false,
-    isYearly: false,
+    isYearly: true,
   });
 
   const setProp = (event) => {

@@ -5,20 +5,22 @@ import Pagination from "../Pagination/Pagination";
 import Steps from "../Steps/Steps";
 import Plans from "../Plans/Plans";
 import AddOns from "../AddOns/AddOns";
+import Summary from "../Summary/Summary";
 
 export default function MultiStepForm() {
   const { form, setProp, setError, ...pagination } = useForm();
   const steps = [
     <Personal form={{ ...form, setProp, setError }} />,
     <Plans form={{ ...form, setProp }} />,
-    <AddOns addOns={form.addOns} setProp={setProp} />,
+    <AddOns form={{ ...form, setProp }} />,
+    <Summary form={form} />,
   ];
 
   return (
     <form className="stepform flex bx-between">
       <Steps currentPage={form.currentPage} />
       <div className="stepform__main flex">
-        <div className="stepform__steps">{steps[2]}</div>
+        <div className="stepform__steps">{steps[3]}</div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="12"
