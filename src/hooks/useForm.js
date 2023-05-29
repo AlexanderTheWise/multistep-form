@@ -13,7 +13,7 @@ export default function useForm() {
       invalidError: false,
     },
     planError: false,
-    isYearly: true,
+    isYearly: false,
   });
 
   const setProp = (event) => {
@@ -45,7 +45,9 @@ export default function useForm() {
     }));
   };
 
-  const moveBackwards = () => {
+  const moveBackwards = (event) => {
+    event.preventDefault();
+
     if (form.currentPage === 0) return;
 
     setForm((prevForm) => ({

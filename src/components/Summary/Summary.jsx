@@ -1,7 +1,7 @@
 import "./Summary.css";
 import { plans, addons } from "../data";
 
-export default function Summary({ form: { plan, addOns, isYearly } }) {
+export default function Summary({ form: { plan, addOns, isYearly, setProp } }) {
   const peridiocity = isYearly ? "year" : "month";
   const disminutive = isYearly ? "yr" : "mo";
 
@@ -28,7 +28,16 @@ export default function Summary({ form: { plan, addOns, isYearly } }) {
         <div className="header flex itm-center bx-between">
           <div className="summary__plan flex">
             <span>{plan} (Monthly)</span>
-            <button>Change</button>
+            <label>
+              Change
+              <input
+                type="checkbox"
+                className="not-show"
+                checked={isYearly}
+                name="isYearly"
+                onChange={setProp}
+              />
+            </label>
           </div>
           <span>
             ${getPlanCost()}/{disminutive}
