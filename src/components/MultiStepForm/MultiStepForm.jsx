@@ -6,35 +6,36 @@ import Steps from "../Steps/Steps";
 import Plans from "../Plans/Plans";
 import AddOns from "../AddOns/AddOns";
 import Summary from "../Summary/Summary";
+import Thanks from "../Thanks/Thanks";
 
 export default function MultiStepForm() {
   const { form, setProp, setError, ...pagination } = useForm();
   const steps = [
     <Personal form={{ ...form, setProp, setError }} />,
-    <Plans form={{ ...form, setProp }} />,
+    <Plans form={{ ...form, setProp, setError }} />,
     <AddOns form={{ ...form, setProp }} />,
-    <Summary form={form} />,
+    <Summary form={{ ...form, setProp }} />,
+    <Thanks />,
   ];
 
   return (
     <form className="stepform flex bx-between">
-      <Steps currentPage={form.currentPage} />
+      <Steps
+        currentPage={
+          form.currentPage === steps.length - 1
+            ? steps.length - 2
+            : form.currentPage
+        }
+      />
       <div className="stepform__main flex">
-        <div className="stepform__steps">{steps[3]}</div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="12"
-          height="9"
-          viewBox="0 0 12 9"
-        >
-          <path
-            fill="none"
-            stroke="#FFF"
-            strokeWidth="2"
-            d="m1 4 3.433 3.433L10.866 1"
+        <div className="stepform__steps">{steps[form.currentPage]}</div>
+        {form.currentPage !== steps.length - 1 && (
+          <Pagination
+            currentPage={form.currentPage}
+            pagination={pagination}
+            length={steps.length}
           />
-        </svg>
-        <Pagination currentPage={form.currentPage} pagination={pagination} />
+        )}
       </div>
     </form>
   );

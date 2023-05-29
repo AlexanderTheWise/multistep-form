@@ -1,9 +1,16 @@
 import { plans } from "../data";
 import "./Plans.css";
 
-export default function Plan({ form: { isYearly, setProp, plan } }) {
+export default function Plan({
+  form: { isYearly, setProp, plan, setError, planError },
+}) {
   return (
-    <fieldset className="plan">
+    <fieldset
+      className="plan"
+      onFocus={() => {
+        setError(false, "planError");
+      }}
+    >
       <legend>Select your plan</legend>
       <p>You have the option of monthly or yearly billing</p>
       <div className="plan__entries flex">
@@ -30,7 +37,7 @@ export default function Plan({ form: { isYearly, setProp, plan } }) {
         ))}
       </div>
       <div className="plan__payment flex center">
-        <span className={isYearly || "rather"}>Monthly</span>
+        <span className={isYearly ? "" : "rather"}>Monthly</span>
         <label className="plan__switch">
           <input
             type="checkbox"
@@ -41,8 +48,9 @@ export default function Plan({ form: { isYearly, setProp, plan } }) {
           />
           <div className="plan__switch__slider"></div>
         </label>
-        <span className={isYearly && "rather"}>Yearly</span>
+        <span className={isYearly ? "rather" : ""}>Yearly</span>
       </div>
+      {planError && <span className="plan__error">You must select a plan</span>}
     </fieldset>
   );
 }

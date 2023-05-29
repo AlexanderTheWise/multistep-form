@@ -18,9 +18,14 @@
   gap: 5px;
 }
 
-.summary__plan button {
+.summary__plan label {
+  position: relative;
   text-decoration: underline;
   color: var(--cool-gray);
+}
+
+.summary__plan label:hover {
+  color: var(--purplish-blue);
 }
 
 .row p {

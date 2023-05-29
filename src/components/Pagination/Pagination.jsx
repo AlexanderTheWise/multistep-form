@@ -1,6 +1,7 @@
 import "./Pagination.css";
 
 export default function Pagination({
+  length,
   currentPage,
   pagination: { moveBackwards, moveForwards },
 }) {
@@ -16,7 +17,7 @@ export default function Pagination({
       </button>
       <button
         className="pagination__next"
-        onClick={() => moveForwards(2)}
+        onClick={() => moveForwards(length)}
         type="button"
       >
         Next Step
