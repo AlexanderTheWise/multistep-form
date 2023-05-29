@@ -21,7 +21,8 @@
   flex-direction: column;
 }
 
-.stepform legend {
+.stepform legend,
+.stepform .step-title {
   font-size: 25px;
   font-weight: 700;
 }
@@ -50,7 +51,8 @@
     padding: calc(55px - 16px) 100px 0;
   }
 
-  .stepform legend {
+  .stepform legend,
+  .stepform .step-title {
     font-size: 33px;
   }
 }

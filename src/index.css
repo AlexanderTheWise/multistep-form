@@ -57,7 +57,8 @@ button {
   cursor: pointer;
 }
 
-legend {
+legend,
+.step-title {
   color: var(--marine-blue);
   font-weight: 700;
   font-size: 20px;

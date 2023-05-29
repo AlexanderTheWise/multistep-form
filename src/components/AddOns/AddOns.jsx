@@ -1,7 +1,7 @@
 import { addons } from "../data";
 import "./AddOns.css";
 
-export default function AddOns({ setProp, addOns }) {
+export default function AddOns({ form: { setProp, addOns, isYearly } }) {
   return (
     <fieldset className="add-ons">
       <legend>Pick add-ons</legend>
@@ -24,7 +24,10 @@ export default function AddOns({ setProp, addOns }) {
               <span className="add-ons__name">{name}</span>
               <span className="add-ons__description">{description}</span>
             </div>
-            <div className="add-ons__price">+${monthPrice}/mo</div>
+            <div className="add-ons__price">
+              +${isYearly ? monthPrice * 10 : monthPrice}/
+              {isYearly ? "yr" : "mo"}
+            </div>
           </label>
         ))}
       </div>

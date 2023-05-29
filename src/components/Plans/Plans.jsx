@@ -21,7 +21,7 @@ export default function Plan({ form: { isYearly, setProp, plan } }) {
             <div className="plan__info flex">
               <div className="plan__name">{name}</div>
               <div className="plan__price ">
-                ${isYearly ? monthPrice * 12 - monthPrice * 2 : monthPrice}/
+                ${isYearly ? monthPrice * 10 : monthPrice}/
                 {isYearly ? "yr" : "mo"}
               </div>
               {isYearly && <div className="rather">2 months free</div>}
