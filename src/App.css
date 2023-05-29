@@ -10,6 +10,10 @@
   justify-content: space-between;
 }
 
+.itm-center {
+  align-items: center;
+}
+
 .center {
   justify-content: center;
   align-items: center;
@@ -28,4 +32,17 @@
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.ipt-checkbox {
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+}
+
+.ipt-checkbox:has(input:hover, input:checked) {
+  border: 2px solid var(--purplish-blue);
+}
+
+.ipt-checkbox:has(input:checked) {
+  background: var(--alabaster);
 }
