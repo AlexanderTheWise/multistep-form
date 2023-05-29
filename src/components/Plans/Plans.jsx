@@ -8,7 +8,7 @@ export default function Plan({ form: { isYearly, setProp, plan } }) {
       <p>You have the option of monthly or yearly billing</p>
       <div className="plan__entries flex">
         {plans.map(({ icon, name, monthPrice }) => (
-          <label className="plan__entry flex" key={name}>
+          <label className="plan__entry ipt-checkbox flex" key={name}>
             <input
               type="radio"
               name="plan"

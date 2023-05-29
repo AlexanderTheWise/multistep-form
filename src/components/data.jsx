@@ -19,3 +19,21 @@ export const plans = [
     icon: <Pro />,
   },
 ];
+
+export const addons = [
+  {
+    name: "Online service",
+    description: "Access to multiplayer games",
+    monthPrice: 1,
+  },
+  {
+    name: "Larger storage",
+    description: "Extra 1TB of cloud save",
+    monthPrice: 2,
+  },
+  {
+    name: "Customizable profile",
+    description: "Custom theme on your profile",
+    monthPrice: 2,
+  },
+];

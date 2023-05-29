@@ -1,0 +1,67 @@
+.add-ons__entries {
+  margin-top: 25px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-ons__add-on {
+  color: var(--cool-gray);
+  padding: 10px;
+  position: relative;
+}
+
+.add-ons__add-on::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+}
+
+.add-ons__add-on input {
+  height: 61px;
+}
+
+.add-ons__add-on:has(input:checked)::before {
+  background: var(--purplish-blue) url("../../assets/images/icon-checkmark.svg")
+    no-repeat center;
+}
+
+.add-ons__info {
+  gap: 5px;
+  margin-left: 10px;
+  flex-direction: column;
+}
+
+.add-ons__name {
+  background: url("../../assets/images/icon-checkmark.svg");
+  color: var(--marine-blue);
+  font-weight: 500;
+}
+
+.add-ons__description {
+  font-size: 13.5px;
+}
+
+.add-ons__price {
+  color: var(--purplish-blue);
+  margin-left: auto;
+}
+
+@media (min-width: 935px) {
+  .add-ons__entries {
+    margin-top: 40px;
+  }
+
+  .add-ons__add-on {
+    padding: 20px;
+  }
+
+  .add-ons__info {
+    margin-left: 20px;
+  }
+
+  .add-ons__description {
+    font-size: 15px;
+  }
+}

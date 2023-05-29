@@ -6,6 +6,7 @@ export default function useForm() {
     email: "",
     phone: "",
     plan: "",
+    addOns: [],
     currentPage: 0,
     personalErrors: {
       emptyError: false,
@@ -19,9 +20,15 @@ export default function useForm() {
     const targetName = event.target.name;
     const targetValue =
       targetName === "isYearly" ? event.target.checked : event.target.value;
+
     setForm((prevForm) => ({
       ...prevForm,
-      [targetName]: targetValue,
+      [targetName]:
+        targetName === "addOns"
+          ? prevForm.addOns.includes(targetValue)
+            ? prevForm.addOns.filter((addOn) => addOn !== targetValue)
+            : [...prevForm.addOns, targetValue]
+          : targetValue,
     }));
   };
 
