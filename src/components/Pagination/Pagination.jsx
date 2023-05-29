@@ -20,7 +20,7 @@ export default function Pagination({
         onClick={() => moveForwards(length)}
         type="button"
       >
-        Next Step
+        {currentPage === length - 2 ? "Confirm" : "Next Step"}
       </button>
     </div>
   );
